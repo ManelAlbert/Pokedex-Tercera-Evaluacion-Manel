@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 
 $host = 'localhost';
 $user = 'manel'; 
-$password = '1234-Abcd'; 
+$password = '1234-Abcd';
 $database = 'pokedex';
 
 $conn = mysqli_connect($host, $user, $password, $database);
@@ -18,18 +18,22 @@ $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($conn, $_POST['nom
 $generacion = isset($_POST['generacion']) ? mysqli_real_escape_string($conn, $_POST['generacion']) : '';
 $tipo = isset($_POST['tipo']) ? mysqli_real_escape_string($conn, $_POST['tipo']) : '';
 
-$query = "SELECT id, name, sprite_url, type1, type2 FROM pokemon WHERE 1=1";
+// Incluimos la habilidad en el SELECT y hacemos JOIN con la tabla habilidades
+$query = "SELECT p.id, p.numero_pokedex, p.name, p.sprite_url, p.type1, p.type2, h.nombre AS habilidad
+          FROM pokemon p
+          LEFT JOIN habilidades h ON p.habilidad_id = h.id
+          WHERE 1=1";
 
 if (!empty($nombre)) {
-    $query .= " AND name LIKE '%$nombre%'";
+    $query .= " AND p.name LIKE '%$nombre%'";
 }
 
 if (!empty($generacion)) {
-    $query .= " AND generation = '$generacion'";
+    $query .= " AND p.generation = '$generacion'";
 }
 
 if (!empty($tipo)) {
-    $query .= " AND (type1 = '$tipo' OR type2 = '$tipo')";
+    $query .= " AND (p.type1 = '$tipo' OR p.type2 = '$tipo')";
 }
 
 $result = mysqli_query($conn, $query);

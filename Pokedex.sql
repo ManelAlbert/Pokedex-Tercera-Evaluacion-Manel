@@ -43,7 +43,22 @@ INSERT INTO `habilidades` (`id`, `nombre`, `descripcion`) VALUES
 (2, 'Blaze', 'Potencia los movimientos de tipo Fuego en momentos críticos.'),
 (3, 'Torrent', 'Potencia los movimientos de tipo Agua en momentos críticos.'),
 (4, 'Static', 'Puede paralizar al contacto físico.'),
-(5, 'Run Away', 'Permite huir de los combates contra Pokémon salvajes.');
+(5, 'Run Away', 'Permite huir de los combates contra Pokémon salvajes.'),
+(6, 'Steadfast', 'Aumenta la Velocidad si el Pokémon retrocede.'),
+(7, 'Levitate', 'Inmunidad a ataques de tipo Tierra.'),
+(8, 'Guts', 'Aumenta el Ataque si sufre un problema de estado.'),
+(9, 'Cursed Body', 'Puede inutilizar el movimiento del rival al contacto.'),
+(10, 'Inner Focus', 'Evita el retroceso.'),
+(11, 'No Guard', 'Todos los movimientos usados por o contra este Pokémon nunca fallan.'),
+(12, 'Adaptability', 'Potencia los movimientos del mismo tipo que el Pokémon.'),
+(13, 'Cute Charm', 'Puede enamorar al rival al contacto.'),
+(14, 'Intimidate', 'Baja el Ataque del rival al entrar en combate.'),
+(15, 'Iron Fist', 'Potencia los movimientos de puño.'),
+(16, 'Illuminate', 'Aumenta la probabilidad de encontrar Pokémon salvajes.'),
+(17, 'Synchronize', 'Transfiere problemas de estado al rival.'),
+(18, 'Pressure', 'El rival gasta el doble de PP.'),
+(19, 'Refrigerate', 'Convierte los movimientos de tipo Normal en tipo Hielo.'),
+(20, 'Sheer Force', 'Aumenta la potencia de los movimientos con efectos secundarios, pero elimina dichos efectos.');
 
 -- --------------------------------------------------------
 
@@ -170,7 +185,7 @@ ALTER TABLE `tipos`
 -- AUTO_INCREMENT de la tabla `habilidades`
 --
 ALTER TABLE `habilidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `tipos`

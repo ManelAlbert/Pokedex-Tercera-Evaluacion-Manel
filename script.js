@@ -4,7 +4,7 @@ $(document).ready(function() {
 
         let nombre = $('#nombre').val();
         let generacion = $('#generacion').val();
-        let tipo = $('#tipo').val(); // 👈 Añadido para filtrar por tipo
+        let tipo = $('#tipo').val();
 
         $.ajax({
             url: 'buscar.php',
@@ -13,7 +13,7 @@ $(document).ready(function() {
             data: {
                 nombre: nombre,
                 generacion: generacion,
-                tipo: tipo // 👈 Añadido para enviar el tipo
+                tipo: tipo
             },
             success: function(respuesta) {
                 console.log('Respuesta AJAX:', respuesta);
@@ -36,7 +36,7 @@ $(document).ready(function() {
                 let card = `
                     <div class="pokemon">
                         <img src="${pokemon.sprite_url}" alt="${pokemon.name}">
-                        <h3>${pokemon.name}</h3>
+                        <h3>#${pokemon.numero_pokedex} ${pokemon.name}</h3>
                         <p>${pokemon.type1}${tipo2}</p>
                     </div>
                 `;
