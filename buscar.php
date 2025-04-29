@@ -3,8 +3,8 @@ header('Access-Control-Allow-Origin: *'); // 👈 Añadido para solucionar CORS
 header('Content-Type: application/json');
 
 $host = 'localhost';
-$user = 'usuario_pokedex'; 
-$password = 'tu_contraseña_segura'; 
+$user = 'manel'; 
+$password = '1234-Abcd'; 
 $database = 'pokedex';
 
 $conn = mysqli_connect($host, $user, $password, $database);
