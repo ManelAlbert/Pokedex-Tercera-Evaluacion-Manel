@@ -13,17 +13,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pokédex</title>
+    <title>Pokédex Moderna</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <div class="contenedor">
-        <h1>Pokédex</h1>
-        <form id="formulario-busqueda">
-            <input type="text" id="nombre" placeholder="Buscar por nombre...">
-            
+        <h1>
+            <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Pokeball" style="width:40px;vertical-align:middle;margin-right:10px;">
+            Pokédex
+        </h1>
+        <form id="formulario-busqueda" autocomplete="off">
+            <input type="text" id="nombre" placeholder="Buscar por nombre o número..." aria-label="Buscar por nombre o número">
             <select id="generacion">
                 <option value="">Todas las generaciones</option>
                 <option value="1">Primera Generación</option>
@@ -36,13 +40,37 @@
                 <option value="8">Octava Generación</option>
                 <option value="9">Novena Generación</option>
             </select>
-
-            <button type="submit">Buscar</button>
+            <select id="tipo">
+                <option value="">Todos los tipos</option>
+                <option value="Grass">Planta</option>
+                <option value="Fire">Fuego</option>
+                <option value="Water">Agua</option>
+                <option value="Electric">Eléctrico</option>
+                <option value="Normal">Normal</option>
+                <option value="Flying">Volador</option>
+                <option value="Poison">Veneno</option>
+                <option value="Fighting">Lucha</option>
+                <option value="Ghost">Fantasma</option>
+                <option value="Steel">Acero</option>
+                <option value="Fairy">Hada</option>
+                <option value="Dark">Siniestro</option>
+                <option value="Dragon">Dragón</option>
+                <option value="Ice">Hielo</option>
+                <option value="Ground">Tierra</option>
+                <option value="Psychic">Psíquico</option>
+                <option value="Bug">Bicho</option>
+                <option value="Rock">Roca</option>
+            </select>
+            <button type="submit">
+                <span style="vertical-align:middle;">🔍</span> Buscar
+            </button>
         </form>
-
         <div id="resultados">
             <!-- Aquí se mostrarán los resultados dinámicamente -->
         </div>
+        <footer style="text-align:center;margin-top:32px;color:#888;font-size:0.95rem;z-index:1;position:relative;">
+            <span>Pokédex moderna &copy; 2025 | Inspirado en <a href="https://pokeapi.co/" target="_blank" style="color:#76b2fe;text-decoration:none;">PokeAPI</a></span>
+        </footer>
     </div>
 </body>
 </html>
