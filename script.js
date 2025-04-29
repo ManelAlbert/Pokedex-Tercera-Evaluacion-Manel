@@ -4,6 +4,7 @@ $(document).ready(function() {
 
         let nombre = $('#nombre').val();
         let generacion = $('#generacion').val();
+        let tipo = $('#tipo').val(); // 👈 Añadido para filtrar por tipo
 
         $.ajax({
             url: 'buscar.php',
@@ -11,10 +12,11 @@ $(document).ready(function() {
             dataType: 'json',
             data: {
                 nombre: nombre,
-                generacion: generacion
+                generacion: generacion,
+                tipo: tipo // 👈 Añadido para enviar el tipo
             },
             success: function(respuesta) {
-                console.log('Respuesta AJAX:', respuesta); // 👈 VERIFICACIÓN AÑADIDA AQUÍ
+                console.log('Respuesta AJAX:', respuesta);
                 mostrarResultados(respuesta);
             },
             error: function(xhr, status, error) {

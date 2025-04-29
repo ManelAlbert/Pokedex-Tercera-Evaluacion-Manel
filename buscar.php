@@ -16,6 +16,7 @@ if (!$conn) {
 
 $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($conn, $_POST['nombre']) : '';
 $generacion = isset($_POST['generacion']) ? mysqli_real_escape_string($conn, $_POST['generacion']) : '';
+$tipo = isset($_POST['tipo']) ? mysqli_real_escape_string($conn, $_POST['tipo']) : '';
 
 $query = "SELECT id, name, sprite_url, type1, type2 FROM pokemon WHERE 1=1";
 
@@ -25,6 +26,10 @@ if (!empty($nombre)) {
 
 if (!empty($generacion)) {
     $query .= " AND generation = '$generacion'";
+}
+
+if (!empty($tipo)) {
+    $query .= " AND (type1 = '$tipo' OR type2 = '$tipo')";
 }
 
 $result = mysqli_query($conn, $query);
