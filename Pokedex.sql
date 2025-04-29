@@ -1,3 +1,6 @@
+CREATE USER IF NOT EXISTS 'manel'@'localhost' IDENTIFIED BY '1234-Abcd';
+GRANT ALL PRIVILEGES ON *.* TO 'manel'@'localhost' WITH GRANT OPTION;
+
 CREATE DATABASE IF NOT EXISTS `pokedex`;
 USE `pokedex`;
 -- phpMyAdmin SQL Dump

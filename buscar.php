@@ -18,22 +18,21 @@ $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($conn, $_POST['nom
 $generacion = isset($_POST['generacion']) ? mysqli_real_escape_string($conn, $_POST['generacion']) : '';
 $tipo = isset($_POST['tipo']) ? mysqli_real_escape_string($conn, $_POST['tipo']) : '';
 
-// Incluimos la habilidad en el SELECT y hacemos JOIN con la tabla habilidades
-$query = "SELECT p.id, p.numero_pokedex, p.name, p.sprite_url, p.type1, p.type2, h.nombre AS habilidad
-          FROM pokemon p
-          LEFT JOIN habilidades h ON p.habilidad_id = h.id
+// Consulta a la tabla pokemon según la estructura de tu base de datos
+$query = "SELECT id, numero_pokedex, name, sprite_url, type1, type2, generation
+          FROM pokemon
           WHERE 1=1";
 
 if (!empty($nombre)) {
-    $query .= " AND p.name LIKE '%$nombre%'";
+    $query .= " AND name LIKE '%$nombre%'";
 }
 
 if (!empty($generacion)) {
-    $query .= " AND p.generation = '$generacion'";
+    $query .= " AND generation = '$generacion'";
 }
 
 if (!empty($tipo)) {
-    $query .= " AND (p.type1 = '$tipo' OR p.type2 = '$tipo')";
+    $query .= " AND (type1 = '$tipo' OR type2 = '$tipo')";
 }
 
 $result = mysqli_query($conn, $query);
