@@ -6,6 +6,7 @@ Proyecto de Pokédex moderna para la tercera evaluación.
 
 - **Base de datos:**
   - Se corrigieron errores de sintaxis en los scripts SQL.
+  - Se añadió la línea de creación del usuario en el script `pokedex.sql`.
   - Se añadieron y corrigieron las habilidades de los Pokémon en la tabla `habilidades`.
   - Se revisaron los tipos de Pokémon para evitar errores de clave foránea.
   - Se verificó y corrigió la URL de los sprites para Pokémon como Fennekin y Fuecoco.
